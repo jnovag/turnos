@@ -1,0 +1,1 @@
+json.extract! @turno, :id, :usuario, :agencia, :nombre, :asunto, :descripcion, :hora_ingreso, :hora_atencion, :hora_finalizacion, :comentario, :usuario_ingreso_id, :usuario_atencion_id, :estado, :created_at, :updated_at

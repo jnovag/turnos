@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asunto:</strong>
+  <%= @turno.asunto %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @turno.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_turno_path(@turno) %> |
+<%= link_to 'Back', turnos_path %>

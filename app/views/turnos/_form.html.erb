@@ -1,0 +1,65 @@
+<%= form_for(@turno) do |f| %>
+  <% if @turno.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@turno.errors.count, "error") %> prohibited this turno from being saved:</h2>
+
+      <ul>
+      <% @turno.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :usuario %><br>
+    <%= f.text_field :usuario %>
+  </div>
+  <div class="field">
+    <%= f.label :agencia %><br>
+    <%= f.text_field :agencia %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :asunto %><br>
+    <%= f.text_field :asunto %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :hora_ingreso %><br>
+    <%= f.datetime_select :hora_ingreso %>
+  </div>
+  <div class="field">
+    <%= f.label :hora_atencion %><br>
+    <%= f.datetime_select :hora_atencion %>
+  </div>
+  <div class="field">
+    <%= f.label :hora_finalizacion %><br>
+    <%= f.datetime_select :hora_finalizacion %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br>
+    <%= f.text_area :comentario %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_ingreso_id %><br>
+    <%= f.number_field :usuario_ingreso_id %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_atencion_id %><br>
+    <%= f.number_field :usuario_atencion_id %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.number_field :estado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

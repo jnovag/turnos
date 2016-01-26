@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario: 
+  agencia: 
+  nombre: MyString
+  asunto: MyString
+  descripcion: MyText
+  hora_ingreso: 2016-01-25 20:08:17
+  hora_atencion: 2016-01-25 20:08:17
+  hora_finalizacion: 2016-01-25 20:08:17
+  comentario: MyText
+  usuario_ingreso_id: 1
+  usuario_atencion_id: 1
+  estado: 1
+
+two:
+  usuario: 
+  agencia: 
+  nombre: MyString
+  asunto: MyString
+  descripcion: MyText
+  hora_ingreso: 2016-01-25 20:08:17
+  hora_atencion: 2016-01-25 20:08:17
+  hora_finalizacion: 2016-01-25 20:08:17
+  comentario: MyText
+  usuario_ingreso_id: 1
+  usuario_atencion_id: 1
+  estado: 1

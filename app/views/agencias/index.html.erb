@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Agencias</h1>
+
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Zona</th>
+      <th>Numero</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @agencias.each do |agencia| %>
+      <tr>
+        <td><%= agencia.nombre %></td>
+        <td><%= agencia.direccion %></td>
+        <td><%= agencia.telefono %></td>
+        <td><%= agencia.zona %></td>
+        <td><%= agencia.numero %></td>
+        <td><%= link_to 'Show', agencia %></td>
+        <td><%= link_to 'Edit', edit_agencia_path(agencia) %></td>
+        <td><%= link_to 'Destroy', agencia, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Agencia', new_agencia_path %>
