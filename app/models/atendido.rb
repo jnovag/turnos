@@ -1,0 +1,3 @@
+class Atendido < Turno
+
+end

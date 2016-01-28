@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @atencion.descripcion %>
+</p>
+
+<p>
+  <strong>Comentario:</strong>
+  <%= @atencion.comentario %>
+</p>
+
+<%= link_to 'Editar', edit_atencion_path(@atencion) %> |
+<%= link_to 'Atendido', atendido_atencion_path(@atencion) %> |
+<%= link_to 'Atras', atenciones_path %>

@@ -1,2 +1,0 @@
-module Turnos::AtencionesHelper
-end

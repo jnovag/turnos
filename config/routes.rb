@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   resources :agencias
-  
-  namespace :turnos do
-    resources :atenciones
-  end
   resources :turnos
+  resources :atenciones do
+    member do
+      get 'atendido'
+    end
+  end
+  resources :recepciones do
+    member do
+      get 'atender'
+    end
+  end
   resources :usuarios
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

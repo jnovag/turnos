@@ -1,0 +1,29 @@
+<%= form_for(@recepcion) do |f| %>
+  <% if @recepcion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recepcion.errors.count, "error") %> prohibited this recepcion from being saved:</h2>
+
+      <ul>
+      <% @recepcion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :asunto %><br>
+    <%= f.text_field :asunto , class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion, class: 'form-control'  %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Guardar', class: 'btn btn-primary' %>
+  </div>
+<% end %>

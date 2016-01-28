@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1> Recepciones</h1>
+
+<table class="table table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Asunto</th>
+      <th>Descripcion</th>
+      <th>Ingreso</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recepciones.each do |recepcion| %>
+      <tr>
+        <td><%= recepcion.nombre %></td>
+        <td><%= recepcion.asunto %></td>
+        <td><%= recepcion.descripcion %></td>
+        <td><%= recepcion.hora_ingreso  %></td>
+        <td><%= link_to 'Show', recepcion %></td>
+        <td><%= link_to 'Edit', edit_recepcion_path(recepcion) %></td>
+        <td><%= link_to 'Destroy', recepcion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Atender', atender_recepcion_path(recepcion) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recepcion', new_recepcion_path %>

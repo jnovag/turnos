@@ -1,0 +1,25 @@
+<%= form_for(@atencion) do |f| %>
+  <% if @atencion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@atencion.errors.count, "error") %> prohibited this atencion from being saved:</h2>
+
+      <ul>
+      <% @atencion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_area :descripcion , class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br>
+    <%= f.text_area :comentario , class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
