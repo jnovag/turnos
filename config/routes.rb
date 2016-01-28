@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :atendidos
+
   resources :agencias
   resources :turnos
   resources :atenciones do

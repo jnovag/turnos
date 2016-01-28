@@ -1,0 +1,27 @@
+<h3>Turnos Atendidos</h3>
+
+<table class="table table-hove table-striped table-condensed">
+	<thead>
+		<tr>
+			<th>Tiempo de Espera</th>
+			<th>Tiempo de Atención</th>
+			<th>Asunto</th>
+			<th>Descripción</th>
+			<th>Respuesta</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @atendidos.each do |atendido| %>
+			<tr>
+				<td><%= distance_of_time_in_words(atendido.hora_ingreso, atendido.hora_atencion) %></td>
+				<td><%= distance_of_time_in_words(atendido.hora_atencion, atendido.hora_finalizacion) %></td>
+				<td><%= atendido.asunto %></td>
+				<td><%= atendido.descripcion %></td>
+				<td><%= atendido.comentario %></td>
+				<td><%= link_to 'Ver', atendido %></td>
+			</tr>
+		<% end %>
+	</tbody>
+
+</table>
