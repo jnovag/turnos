@@ -1,4 +1,5 @@
 class UsuariosController < ApplicationController
+  before_action :authenticate_usuario!
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   # GET /usuarios
@@ -69,6 +70,9 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:nombre, :apellido, :agencia, :rol, :estado, :codigo, :correo, :login, :cedula, :password, :password_confirmation)
+      u_params = params.require(:usuario).permit(:nombre, :apellido, :agencia_id, :rol, :estado, :codigo, :correo, :login, :cedula, :password, :password_confirmation)
+      u_params.delete(:password) if u_params[:password].blank?
+      u_params.delete(:password_confirmation) if u_params[:password_confirmation].blank?
+      u_params
     end
 end

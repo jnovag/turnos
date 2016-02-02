@@ -51,4 +51,9 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'bootstrap-sass'
 gem 'bcrypt'
+gem 'devise'
+
+# graficos
+gem 'morrisjs-rails'
+gem 'raphael-rails'
 

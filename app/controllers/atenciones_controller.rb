@@ -1,4 +1,5 @@
 class AtencionesController < ApplicationController
+  before_action :authenticate_usuario!
   before_action :set_atencion, only: [:atendido, :show, :edit, :update, :destroy]
 
   # GET /atenciones

@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Listing Turnos</h1>
 
-<table>
+<table class="table table-hover table-condensed table-striped">
   <thead>
     <tr>
       <th>Agencia</th>
@@ -16,14 +16,14 @@
       <th>Usuario ingreso</th>
       <th>Usuario atencion</th>
       <th>Estado</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @turnos.each do |turno| %>
       <tr>
-        <td><%= turno.agencia %></td>
+        <td><%= turno.agencia.try(:nombre) %></td>
         <td><%= turno.nombre %></td>
         <td><%= turno.asunto %></td>
         <td><%= turno.descripcion %></td>
@@ -31,12 +31,11 @@
         <td><%= turno.hora_atencion %></td>
         <td><%= turno.hora_finalizacion %></td>
         <td><%= turno.comentario %></td>
-        <td><%= turno.usuario_ingreso_id %></td>
-        <td><%= turno.usuario_atencion_id %></td>
-        <td><%= turno.estado %></td>
-        <td><%= link_to 'Show', turno %></td>
-        <td><%= link_to 'Edit', edit_turno_path(turno) %></td>
-        <td><%= link_to 'Destroy', turno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= turno.usuario_ingreso.try(:nombre) %></td>
+        <td><%= turno.usuario_atencion.try(:nombre) %></td>
+        <td><%= turno.type %></td>
+        <td><%= link_to 'Ver', turno_path(turno) %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -44,4 +43,15 @@
 
 <br>
 
-<%= link_to 'New Turno', new_turno_path %>
+<div id="myfirstchart" style="height: 250px;"></div>
+
+<script type="text/javascript">
+  Morris.Donut({
+    element: 'myfirstchart',
+    data: [
+      {label: "Download Sales", value: 12},
+      {label: "In-Store Sales", value: 30},
+      {label: "Mail-Order Sales", value: 20}
+    ]
+  });
+</script>
