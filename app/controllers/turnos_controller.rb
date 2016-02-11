@@ -1,11 +1,23 @@
 class TurnosController < ApplicationController
+  include Export
   before_action :authenticate_usuario!
   before_action :set_turno, only: [:show, :edit, :update, :destroy]
 
   # GET /turnos
   # GET /turnos.json
   def index
-    @turnos = Turno.all
+    @q = Turno.ransack(params[:q])
+    @turnos = @q.result
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Listado de turnos"  # Excluding ".pdf" extension.
+      end
+      format.csv do 
+        send_data @turnos.to_csv 
+      end
+    end
   end
 
   # GET /turnos/1

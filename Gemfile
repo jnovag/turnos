@@ -56,4 +56,6 @@ gem 'devise'
 # graficos
 gem 'morrisjs-rails'
 gem 'raphael-rails'
+gem 'wicked_pdf'
+gem 'ransack'
 

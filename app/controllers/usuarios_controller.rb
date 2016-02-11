@@ -6,6 +6,12 @@ class UsuariosController < ApplicationController
   # GET /usuarios.json
   def index
     @usuarios = Usuario.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Listado de Usuarios"  # Excluding ".pdf" extension.
+      end
+    end
   end
 
   # GET /usuarios/1

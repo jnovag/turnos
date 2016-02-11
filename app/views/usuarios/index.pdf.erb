@@ -14,7 +14,7 @@
       <th>Correo</th>
       <th>Login</th>
       <th>Cedula</th>
-      <th colspan="3"></th>
+
     </tr>
   </thead>
 
@@ -30,9 +30,7 @@
         <td><%= usuario.email %></td>
         <td><%= usuario.login %></td>
         <td><%= usuario.cedula %></td>
-        <td><%= link_to 'Show', usuario %></td>
-        <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Destroy', usuario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +38,4 @@
 
 <br>
 
-<%= link_to 'Nuevo Usuario', new_usuario_path, class: 'btn btn-success' %>
+

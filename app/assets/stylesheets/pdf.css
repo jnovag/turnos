@@ -1,0 +1,25 @@
+#pdf tr {
+	page-break-inside: avoid; 
+}
+
+#pdf th {
+	background-color: #666;
+	color: white;
+} 
+
+#pdf tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#pdf th, td {
+	border-bottom: 1px solid #ddd 
+}
+
+#pdf {
+	font-size: 10px;
+}
+
+#pdf table {
+	border-collapse: collapse;
+	width: 100%;
+}

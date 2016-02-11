@@ -6,6 +6,12 @@ class AtencionesController < ApplicationController
   # GET /atenciones.json
   def index
     @atenciones = Atencion.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Listado de Atenciones"  # Excluding ".pdf" extension.
+      end
+    end
   end
 
   # GET /atenciones/1

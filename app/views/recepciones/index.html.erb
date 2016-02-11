@@ -22,9 +22,9 @@
         <td><%= recepcion.asunto %></td>
         <td><%= recepcion.descripcion %></td>
         <td><%= recepcion.hora_ingreso  %></td>
-        <td><%= link_to 'Show', recepcion %></td>
-        <td><%= link_to 'Edit', edit_recepcion_path(recepcion) %></td>
-        <td><%= link_to 'Destroy', recepcion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', recepcion %></td>
+        <td><%= link_to 'Editar', edit_recepcion_path(recepcion) %></td>
+        <td><%= link_to 'Borrar', recepcion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Atender', atender_recepcion_path(recepcion) %></td>
       </tr>
     <% end %>
@@ -33,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New Recepcion', new_recepcion_path %>
+<%= link_to 'Nueva Recepción', new_recepcion_path %>

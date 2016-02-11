@@ -1,0 +1,32 @@
+
+
+<h1>Agencias</h1>
+
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Zona</th>
+      <th>Numero</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @agencias.each do |agencia| %>
+      <tr>
+        <td><%= agencia.nombre %></td>
+        <td><%= agencia.direccion %></td>
+        <td><%= agencia.telefono %></td>
+        <td><%= agencia.zona %></td>
+        <td><%= agencia.numero %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
