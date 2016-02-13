@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard/distribucion_estado'
   get 'dashboard/promedio_espera'
   get 'dashboard/promedio_atencion'
+  get 'dashboard/send_report'
 
   devise_for :usuarios
   get 'home/index'

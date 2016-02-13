@@ -24,4 +24,10 @@ class DashboardController < ApplicationController
     end
   end
 
+  def send_report
+    Estadisticas.reporte.deliver
+    flash[:notice] = "Reporte Enviado"
+    redirect_to dashboard_path
+  end
+
 end

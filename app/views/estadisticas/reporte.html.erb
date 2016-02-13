@@ -1,0 +1,65 @@
+<h1>Estadísticas - Reporte</h1>
+
+<p>
+  Reporte de atención del día <%= l(Date.today, format: :short) %>
+</p>
+
+<h4>Promedio por agencia</h4>
+<table>
+	<tr>
+		<th>Agencia</th>
+		<th>Promedio de Espera</th>
+		<th>Promedio de Atención</th>
+		<th>Conteo</th>
+	</tr>
+	<% @promedio_agencia.each do |agencia| %>
+	<tr>
+		<td><%= agencia[:agencia].try(:nombre) %></td>
+		<td><%= agencia[:promedio_espera] %></td>
+		<td><%= agencia[:promedio_atencion] %></td>
+		<td><%= agencia[:conteo] %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<th></th>
+		<th>Total:</th>
+		<th><%= @promedio_agencia.map {|s| s[:conteo]}.sum %></th>
+	</tr>
+</table>
+
+<br/>
+
+<h4>Promedio por usuario</h4>
+<table>
+	<tr>
+		<th>Usuario</th>
+		<th>Promedio</th>
+		<th>Conteo</th>
+	</tr>
+	<% @promedio_usuario.each do |usuario| %>
+	<tr>
+		<td><%= usuario[:usuario].try(:nombre) %></td>
+		<td><%= usuario[:promedio] %></td>
+		<td><%= usuario[:conteo] %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<th></th>
+		<th>Total:</th>
+		<th><%= @promedio_usuario.map {|s| s[:conteo]}.sum %></th>
+	</tr>
+	
+</table>
+
+
+
+<h4>Promedio de espera</h4>
+<%=  @promedio_espera %>
+
+
+<h4>Promedio de atención</h4>
+<%=  @promedio_atencion %>
+
+
+
+
