@@ -58,4 +58,6 @@ gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'wicked_pdf'
 gem 'ransack'
+gem 'sidekiq'
+gem 'sinatra'
 

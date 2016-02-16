@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq' 
+
   get 'dashboard', to: 'dashboard#index'
   get 'dashboard/distribucion_agencia'
   get 'dashboard/distribucion_estado'
