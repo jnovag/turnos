@@ -84,6 +84,8 @@ Rails.application.configure do
       user_name: 'monitorsonicoop@gmail.com',
       password: 'Notifica2016*',
       authenticate: 'plain',
-      domain: 'gmail.com'
+      domain: 'gmail.com',
+      host: '54.85.43.147'
   }
+  config.action_mailer.default_url_options = { host: '54.85.43.147:'}
 end

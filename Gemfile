@@ -60,4 +60,5 @@ gem 'wicked_pdf'
 gem 'ransack'
 gem 'sidekiq'
 gem 'sinatra'
+gem 'puma'
 
