@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: turnero_production
-  username: turnero
-  password: <%= ENV['TURNERO_DATABASE_PASSWORD'] %>
+
